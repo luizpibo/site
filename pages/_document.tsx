@@ -1,4 +1,4 @@
-import Document, { DocumentContext } from "next/document";
+import Document, { DocumentContext, Html, Main, NextScript, Head } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
@@ -25,5 +25,19 @@ export default class MyDocument extends Document {
         }finally{
             sheet.seal()
         }
+    }
+
+    render(): JSX.Element {
+        return (
+            <Html lang="pt-br">
+                <Head >
+                    <meta charSet="utf-8" />
+                </Head>
+                <body>
+                    <Main />
+                    <NextScript />
+                </body>
+            </Html>
+        )
     }
 }

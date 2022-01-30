@@ -1,6 +1,6 @@
 import Head from "next/head";
 import CardList from "../../components/CardList";
-
+import React from "react";
 import {
   Container,
   ContainerBlog,

@@ -1,21 +1,19 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import CardList from "../../components/CardList";
+
 import {
   Container,
   ContainerBlog,
   ContainerInfos,
   ContainerSkills,
   Footer,
-  Header,
   Main,
   PersonalDescription,
   PictureContainer,
   Presentation,
   ProfilePicture,
   Wrapper,
-} from "./styles";
+} from "../../components/styles";
 
 const skills = [
   {
@@ -61,12 +59,12 @@ export default function Home() {
       <Main>
         <PictureContainer>
           <ProfilePicture>
-            <img src="fotosemfundo3.png" />
+            <img src="fotosemfundo3.png" alt="Foto do Luiz"/>
           </ProfilePicture>
         </PictureContainer>
         <Presentation>
           <Wrapper>
-            <h3>Welcome I'm</h3>
+            <h3>Welcome I&apos;m</h3>
             <h1>Luiz Fernando</h1>
             <hr/>
             <h3>web developer</h3>

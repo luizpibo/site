@@ -82,7 +82,9 @@ export default function Home() {
       </ContainerBlog>
       <ContainerInfos>
           <h2>Projetos</h2>
-          <div></div>
+          <div>
+            
+          </div>
       </ContainerInfos>
       <Footer>
         <a className="githubLink" href="https://www.github.com/luizpibo" />

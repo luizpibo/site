@@ -106,7 +106,8 @@ export const Wrapper = styled.div`
 `
 export const ContainerSkills = styled.div`
     align-items: flex-start;
-    background: #80D9A1;
+    background-color: #B7B7B7;
+    /**background: #80D9A1;*/
     border-top: 1px solid #33333388;
     border-bottom: 1px solid #33333388;
     display: grid;

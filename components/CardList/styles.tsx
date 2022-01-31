@@ -19,4 +19,9 @@ export const CardSkill = styled.div`
     justify-content: center;
     min-height: 10rem;
     width: 10rem;
+
+    @media (max-width: 768px) {
+        width: 9.2rem;
+        height: 9.2rem;
+    }
 `;

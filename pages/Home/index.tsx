@@ -10,43 +10,14 @@ import {
   Main,
   PersonalDescription,
   PictureContainer,
+  Post,
+  PostList,
   Presentation,
   ProfilePicture,
   Wrapper,
 } from "../../components/styles";
-
-const skills = [
-  {
-    name: "GraphQL",
-    level: 70,
-    color: "#563D7C",
-  },
-  {
-    name: "JavaScript",
-    level: 75,
-    color: "#F0DB4F",
-  },
-  {
-    name: "NEXT.JS",
-    level: 78,
-    color: "black",
-  },
-  {
-    name: "NodeJS",
-    level: 80,
-    color: "#69A164",
-  },
-  {
-    name: "React",
-    level: 80,
-    color: "#61DAFB",
-  },
-  {
-    name: "TypeScript",
-    level: 65,
-    color: "#007ACC",
-  },
-];
+import Image from "next/image";
+import { skills, postsBlog } from "../../Mocks";
 
 export default function Home() {
   return (
@@ -57,7 +28,7 @@ export default function Home() {
       <Main>
         <PictureContainer>
           <ProfilePicture>
-            <img src="fotosemfundo3.png" alt="Foto do Luiz"/>
+            <img src="/fotosemfundo3.png"  alt="Foto do Luiz"/>
           </ProfilePicture>
         </PictureContainer>
         <Presentation>
@@ -92,9 +63,26 @@ export default function Home() {
           </div>
         </PersonalDescription>
       </ContainerSkills>
-      <ContainerBlog></ContainerBlog>
+      <ContainerBlog>
+        <h2>Ultimos posts</h2>
+        <PostList>
+          {postsBlog.map((post, index) => {
+            return (
+              <Post key={`${post.title}${index}`}>
+                <img src={post.image} alt={`Imagem post ${post.title}`} />
+                <div>
+                  <h3>{post.title}</h3>
+                  <p>{post.description}</p>
+                </div>
+                <p>{post.date}</p>
+              </Post>
+            ) 
+          })}
+        </PostList>
+      </ContainerBlog>
       <ContainerInfos>
-
+          <h2>Projetos</h2>
+          <div></div>
       </ContainerInfos>
       <Footer>
         <a className="githubLink" href="https://www.github.com/luizpibo" />

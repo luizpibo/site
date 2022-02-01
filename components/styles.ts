@@ -7,13 +7,11 @@ export const Header = styled.nav`
     position: fixed;
     width: 100%;
     z-index: 2;
-`;
-
+`
 export const Container = styled.div`
     display: grid;
     font-family: "Prompt", sans-serif;
-`;
-
+`
 export const Main = styled.header`
     align-items: center;
     background-image: url("fundo_header.jpg");
@@ -32,8 +30,7 @@ export const Main = styled.header`
         gap: 1rem;
         grid-template: 1fr 1fr / 1fr;
     }
-`;
-
+`
 export const Presentation = styled.section`
     align-items: center;
     display: grid;
@@ -50,8 +47,6 @@ export const PictureContainer = styled.div`
     position: relative;
     width: 100%;
     ::before{
-
-
         content: "";
         background: #B7B7B7;
         height: 300px;
@@ -63,15 +58,13 @@ export const PictureContainer = styled.div`
         }
     }
 `
-
 export const ProfilePicture = styled.div`
     background-color: #B7B7B7;
     border-radius: 50%;
     display:grid;
     height: 300px;
-    justify-items: center;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
     width: 300px;
     img {
         position: relative;
@@ -82,7 +75,6 @@ export const ProfilePicture = styled.div`
         width: 300px;
     }
 `
-
 export const Wrapper = styled.div`
     background-color: #FFFFFF10;
     backdrop-filter: blur(0.5rem);
@@ -112,10 +104,10 @@ export const Wrapper = styled.div`
         width: 10rem;
     }
 `
-
 export const ContainerSkills = styled.div`
     align-items: flex-start;
-    background: #80D9A1;
+    background-color: #B7B7B7;
+    /**background: #80D9A1;*/
     border-top: 1px solid #33333388;
     border-bottom: 1px solid #33333388;
     display: grid;
@@ -149,20 +141,79 @@ export const PersonalDescription = styled.div`
         font-weight: lighter;
         text-decoration: underline;
     }
-`;
+`
 export const ContainerInfos = styled.section`
     background: linear-gradient(#213365,#0C0D0D);
     display: flex;
-    min-height: 600px;
-    width: 100%;
+    flex-direction: column;
+    height: 30rem;
+    text-align: center;
+    padding: 2rem;
+    div {
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        padding: 2rem;
+        background-color: #EEEEEE55;
+        height: 100%;
+    }
+    h2{
+        margin-bottom: 2rem;
+        color: #B7B7B7;
+        text-shadow: #333333BB 0 0 1rem;
+    }
 `
-
 export const ContainerBlog = styled.section`
     background: #213365;
-    box-shadow: 0 -2px 1rem #000;
-    min-height: 70vh;
-`;
+    box-shadow: 0 0 1rem #000;
+    display: grid;
+    height: 30rem;
+    text-align: center;
+    padding: 2rem;
+    h2{
+        margin-bottom: 2rem;
+        color: #B7B7B7;
+        text-shadow: #333333BB 0 0 1rem;
+    }
+`
+export const PostList = styled.div`
+    justify-self: flex-end;
+    background-color: #B7B7B7;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 1rem #000;
+    display: grid;
+    gap: 0.5rem;
+    height: 100%;
+    padding: 0.5rem 0;
+    width: 50%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+`
+export const Post = styled.div`
+    align-items: center;
+    background-color: #FFFFFF85;
+    height: 5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s;
 
+    img {
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+    }
+    :hover{
+        cursor: pointer;
+        background-color: #FFFFFFAA;
+        color: #969696;
+    }
+    :active{
+        transform: scale(1.05);
+    }
+`
 export const Footer = styled.footer`
     text-align: center;
     background: #0C0D0D;

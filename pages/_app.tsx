@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   <>
   <Head>
     <title>Luiz Fernando</title>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@luizpibo.0" />
     <meta name="twitter:title" content="Luiz Fernando - Desenvolvedor Full Stack" /> 

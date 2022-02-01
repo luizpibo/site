@@ -104,7 +104,7 @@ export const Wrapper = styled.div`
         width: 10rem;
     }
 `
-export const ContainerSkills = styled.div`
+export const ContainerSkills = styled.section`
     align-items: flex-start;
     background-color: #B7B7B7;
     /**background: #80D9A1;*/
@@ -142,56 +142,55 @@ export const PersonalDescription = styled.div`
         text-decoration: underline;
     }
 `
-export const ContainerInfos = styled.section`
+export const ContainerProjectsAndBlog = styled.section`
     background: linear-gradient(#213365,#0C0D0D);
-    display: flex;
-    flex-direction: column;
-    height: 30rem;
-    text-align: center;
-    padding: 2rem;
-    div {
-        font-size: 1.2rem;
-        border-radius: 1rem;
-        padding: 2rem;
-        background-color: #EEEEEE55;
-        height: 100%;
-    }
-    h2{
-        margin-bottom: 2rem;
-        color: #B7B7B7;
-        text-shadow: #333333BB 0 0 1rem;
-    }
-`
-export const ContainerBlog = styled.section`
-    background: #213365;
     box-shadow: 0 0 1rem #000;
     display: grid;
-    height: 30rem;
-    text-align: center;
+    grid-template: 1fr / 1fr 1fr;
+    gap: 2rem;
+    height: 100%;
+    justify-content: stretch;
     padding: 2rem;
+    position: relative;
+    text-align: center;
     h2{
-        margin-bottom: 2rem;
         color: #B7B7B7;
-        text-shadow: #333333BB 0 0 1rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        grid-template: 1fr 1fr / 1fr;
     }
 `
-export const PostList = styled.div`
-    justify-self: flex-end;
+export const Projects = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    div {
+        flex: 1;
+        background-color: #EEEEEE55;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+        padding: 2rem;
+    }
+`
+export const Blog = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+export const PostList = styled.ul`
     background-color: #B7B7B7;
     border-radius: 1rem;
     box-shadow: inset 0 0 1rem #000;
     display: grid;
     gap: 0.5rem;
-    height: 100%;
+    height: 20rem;
     padding: 0.5rem 0;
-    width: 50%;
     overflow-y: scroll;
     overflow-x: hidden;
-    @media (max-width: 768px) {
-        width: 100%;
-    }
+    width: 100%;
 `
-export const Post = styled.div`
+export const Post = styled.li`
     align-items: center;
     background-color: #FFFFFF85;
     height: 5rem;

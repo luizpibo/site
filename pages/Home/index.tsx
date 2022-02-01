@@ -3,8 +3,8 @@ import CardList from "../../components/CardList";
 import React from "react";
 import {
   Container,
-  ContainerBlog,
-  ContainerInfos,
+  ContainerProjectsAndBlog,
+  Projects,
   ContainerSkills,
   Footer,
   Main,
@@ -15,6 +15,7 @@ import {
   Presentation,
   ProfilePicture,
   Wrapper,
+  Blog,
 } from "../../components/styles";
 import Image from "next/image";
 import { skills, postsBlog } from "../../Mocks";
@@ -63,32 +64,35 @@ export default function Home() {
           </div>
         </PersonalDescription>
       </ContainerSkills>
-      <ContainerBlog>
-        <h2>Ultimos posts</h2>
-        <PostList>
-          {postsBlog.map((post, index) => {
-            return (
-              <Post key={`${post.title}${index}`}>
-                <img src={post.image} alt={`Imagem post ${post.title}`} />
-                <div>
-                  <h3>{post.title}</h3>
-                  <p>{post.description}</p>
-                </div>
-                <p>{post.date}</p>
-              </Post>
-            ) 
-          })}
-        </PostList>
-      </ContainerBlog>
-      <ContainerInfos>
-          <h2>Projetos</h2>
-          <div>
-            
-          </div>
-      </ContainerInfos>
+      <ContainerProjectsAndBlog>
+        <Projects>
+            <h2>Projetos</h2>
+            <div>
+              
+            </div>
+        </Projects>
+        <Blog>
+          <h2>Últimos posts</h2>
+          <PostList>
+            {postsBlog.map((post, index) => {
+              return (
+                <Post key={`${post.title}${index}`}>
+                  <img src={post.image} alt={`Imagem post ${post.title}`} />
+                  <div>
+                    <h3>{post.title}</h3>
+                    <p>{post.description}</p>
+                  </div>
+                  <p>{post.date}</p>
+                </Post>
+              ) 
+            })}
+          </PostList>
+        </Blog>
+      </ContainerProjectsAndBlog>
+
       <Footer>
-        <a className="githubLink" href="https://www.github.com/luizpibo" />
-        <a className="linkedinLink" href="https://www.linkedin.com" />
+        <a className="githubLink" href="https://www.github.com/luizpibo" target={"_blank"} />
+        <a className="linkedinLink" href="https://www.linkedin.com/in/luiz-fernando-lima-e-silva-858192125/" target={"_blank"} />
       </Footer>
     </Container>
   );

@@ -17,7 +17,7 @@ import {
   ProfilePicture,
   Wrapper,
   Blog,
-} from "./styles";
+} from "../../src/components/styles";
 
 import CardList from "../../src/components/CardList";
 import Date from "../../src/components/Date";
@@ -30,6 +30,9 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({posts}) => {
+  if(!posts){
+    return <div>Loading...</div>
+  }
   return (
     <Container>
       <Head>

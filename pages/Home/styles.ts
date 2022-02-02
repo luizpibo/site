@@ -93,12 +93,12 @@ export const Wrapper = styled.div`
         line-height: 2.4rem;
     }
 
-    h3 {
+    h4 {
         margin: 0;
     }
 
     hr {
-        background-color: #B7B7B7;
+        background-color: #FFFFFF;
         border: none;
         height: 0.2rem;
         width: 10rem;
@@ -153,8 +153,8 @@ export const ContainerProjectsAndBlog = styled.section`
     padding: 2rem;
     position: relative;
     text-align: center;
-    h2{
-        color: #B7B7B7;
+    h3{
+        color: #FFFFFF;
         margin-bottom: 2rem;
     }
 
@@ -189,25 +189,31 @@ export const PostList = styled.ul`
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100%;
+    a {
+        text-decoration: none;
+        color: #333;
+    }
 `
 export const Post = styled.li`
     align-items: center;
     background-color: #FFFFFF85;
-    height: 5rem;
+    min-height: 7rem;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     transition: all 0.3s;
-
+    h4{
+        font-size: 1rem;
+        color: #213263;
+    }
     img {
-        height: 4rem;
-        width: 4rem;
+        height: 5rem;
+        width: 5rem;
         border-radius: 50%;
     }
     :hover{
         cursor: pointer;
         background-color: #FFFFFFAA;
-        color: #969696;
     }
     :active{
         transform: scale(1.05);
@@ -216,7 +222,7 @@ export const Post = styled.li`
 export const Footer = styled.footer`
     text-align: center;
     background: #0C0D0D;
-    color: #B7B7B7;
+    color: #6ACDAB;
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;

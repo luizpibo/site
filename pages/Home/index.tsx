@@ -30,9 +30,6 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({posts}) => {
-  if(!posts){
-    return <div>Loading...</div>
-  }
   return (
     <Container>
       <Head>
@@ -91,7 +88,7 @@ const Home: React.FC<HomeProps> = ({posts}) => {
         <Blog>
           <h3>Últimos posts</h3>
           <PostList>
-            {posts.map((post, index) => {
+            {posts?.map((post) => {
               return (
                 <Link key={`${post.id}`} href={`https://luiz-fernando-blog.vercel.app/posts/${post.slug}`}>
                 <Post >

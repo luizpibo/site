@@ -10,12 +10,6 @@ const graphqlRequest = gql`
       title
       author {
         name
-        picture {
-          url
-        }
-      }
-      category {
-        name
       }
       id
       _createdAt
@@ -50,13 +44,13 @@ interface Props {
   posts: PostCard[];
 }
 
-const App: React.FC<Props> = (props) => {
+const Index: React.FC<Props> = (props) => {
   return <Home posts={props.posts} />;
 };
 
-export default App;
+export default Index;
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const endpoint = "https://graphql.datocms.com/";
   const graphQLClient = new GraphQLClient(endpoint, {
     headers: {

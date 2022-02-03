@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     html {
-        background-color: #B7B7B7;
+        background: linear-gradient(#0C0D0D,#213365);
     }
 `
 

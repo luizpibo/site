@@ -1,10 +1,11 @@
 import Head from "next/head";
-import CardList from "../../components/CardList";
+
 import React from "react";
+
 import {
   Container,
-  ContainerBlog,
-  ContainerInfos,
+  ContainerProjectsAndBlog,
+  Projects,
   ContainerSkills,
   Footer,
   Main,
@@ -15,11 +16,20 @@ import {
   Presentation,
   ProfilePicture,
   Wrapper,
-} from "../../components/styles";
-import Image from "next/image";
-import { skills, postsBlog } from "../../Mocks";
+  Blog,
+} from "../../src/components/styles";
 
-export default function Home() {
+import CardList from "../../src/components/CardList";
+import Date from "../../src/components/Date";
+import { skills } from "../../src/Mocks";
+import { PostCard } from '../index';
+import Link from "next/link";
+
+interface HomeProps {
+  posts?: Array<PostCard>,
+}
+
+const Home: React.FC<HomeProps> = ({posts}) => {
   return (
     <Container>
       <Head>
@@ -28,15 +38,15 @@ export default function Home() {
       <Main>
         <PictureContainer>
           <ProfilePicture>
-            <img src="/fotosemfundo3.png"  alt="Foto do Luiz"/>
+            <img src="/fotosemfundo3.png" alt="Foto do Luiz" />
           </ProfilePicture>
         </PictureContainer>
         <Presentation>
           <Wrapper>
-            <h3>Welcome I&apos;m</h3>
+            <h4>Welcome I&apos;m</h4>
             <h1>Luiz Fernando</h1>
-            <hr/>
-            <h3>web developer</h3>
+            <hr />
+            <h4>web developer</h4>
           </Wrapper>
         </Presentation>
       </Main>
@@ -47,49 +57,69 @@ export default function Home() {
           <h2>Informações pessoais</h2>
           <div>
             <label>nome</label>
-            <p>Luiz Fernando</p><br/>
+            <p>Luiz Fernando</p>
+            <br />
             <label>idade</label>
-            <p>24 anos</p><br/>
+            <p>24 anos</p>
+            <br />
             <label>Função</label>
-            <p>Desenvolvedor Web</p><br/>
+            <p>Desenvolvedor Web</p>
+            <br />
             <label>cidade</label>
-            <p>Brasília</p><br/>
+            <p>Brasília</p>
+            <br />
             <label>estado</label>
-            <p>DF</p><br/>
+            <p>DF</p>
+            <br />
             <label>e-mail</label>
-            <p>luizfernandolima_09@hotmail.com</p><br/>
+            <p>luizfernandolima_09@hotmail.com</p>
+            <br />
             <label>telefone</label>
-            <p>(61) 9 98338-5897</p><br/>
+            <p>(61) 9 98338-5897</p>
+            <br />
           </div>
         </PersonalDescription>
       </ContainerSkills>
-      <ContainerBlog>
-        <h2>Ultimos posts</h2>
-        <PostList>
-          {postsBlog.map((post, index) => {
-            return (
-              <Post key={`${post.title}${index}`}>
-                <img src={post.image} alt={`Imagem post ${post.title}`} />
-                <div>
-                  <h3>{post.title}</h3>
-                  <p>{post.description}</p>
-                </div>
-                <p>{post.date}</p>
-              </Post>
-            ) 
-          })}
-        </PostList>
-      </ContainerBlog>
-      <ContainerInfos>
-          <h2>Projetos</h2>
-          <div>
-            
-          </div>
-      </ContainerInfos>
+      <ContainerProjectsAndBlog>
+        <Projects>
+          <h3>Projetos</h3>
+          <div></div>
+        </Projects>
+        <Blog>
+          <h3>Últimos posts</h3>
+          <PostList>
+            {posts?.map((post) => {
+              return (
+                <Link key={`${post.id}`} href={`https://luiz-fernando-blog.vercel.app/posts/${post.slug}`}>
+                <Post >
+                  <img src={post.coverImage.url} alt={`Imagem post ${post.title}`} />
+                  <div>
+                    <h4>{post.title}</h4>
+                    <span>Author - {post.author.name}</span>
+                  </div>
+                  <Date dateString={post._createdAt}/>
+                </Post>
+                </Link>
+              );
+            })}
+          </PostList>
+        </Blog>
+      </ContainerProjectsAndBlog>
+
       <Footer>
-        <a className="githubLink" href="https://www.github.com/luizpibo" />
-        <a className="linkedinLink" href="https://www.linkedin.com" />
+        <a
+          className="githubLink"
+          href="https://www.github.com/luizpibo"
+          target={"_blank"}
+        />
+        <a
+          className="linkedinLink"
+          href="https://www.linkedin.com/in/luiz-fernando-lima-e-silva-858192125/"
+          target={"_blank"}
+        />
       </Footer>
     </Container>
   );
 }
+
+export default Home;

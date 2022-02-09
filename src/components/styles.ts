@@ -142,17 +142,16 @@ export const PersonalDescription = styled.div`
         text-decoration: underline;
     }
 `
-export const ContainerProjectsAndBlog = styled.section`
+export const ContainerProjectsAndBlog = styled.div`
     background: linear-gradient(#213365,#0C0D0D);
     box-shadow: 0 0 1rem #000;
-    display: grid;
-    grid-template: 1fr / 1fr 1fr;
+    display: flex;
     gap: 2rem;
-    height: 100%;
+    height: 35rem;
     justify-content: stretch;
     padding: 2rem;
-    position: relative;
     text-align: center;
+
     h3{
         color: #FFFFFF;
         margin-bottom: 2rem;
@@ -165,18 +164,21 @@ export const ContainerProjectsAndBlog = styled.section`
 export const Projects = styled.div`
     display: flex;
     flex-direction: column;
-    height: inherit;
+    flex: 1;
+
     div {
-        flex: 1;
         background-color: #EEEEEE55;
         border-radius: 1rem;
         font-size: 1.2rem;
         padding: 2rem;
+        height: 88%;
     }
     ul {
         display: grid;
         list-style: none;
         gap: 1rem;
+        overflow-y: scroll;
+        height: 100%;
     }
     a {
         text-decoration: none;
@@ -193,6 +195,7 @@ export const Projects = styled.div`
 `
 export const Blog = styled.div`
     display: flex;
+    flex: 1;
     flex-direction: column;
 `
 export const PostList = styled.ul`
@@ -201,7 +204,6 @@ export const PostList = styled.ul`
     box-shadow: inset 0 0 1rem #000;
     display: grid;
     gap: 0.5rem;
-    height: 20rem;
     padding: 0.5rem 0;
     overflow-y: scroll;
     overflow-x: hidden;

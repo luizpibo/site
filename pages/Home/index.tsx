@@ -104,7 +104,8 @@ const Home: React.FC<HomeProps> = ({posts, repos}) => {
           <PostList>
             {posts?.map((post) => {
               return (
-                <Link key={`${post.id}`} href={`https://luiz-fernando-blog.vercel.app/posts/${post.slug}`}>
+                <li key={`${post.id}`} >
+                <Link href={`https://luiz-fernando-blog.vercel.app/posts/${post.slug}`}>
                 <Post >
                   <img src={post.coverImage.url} alt={`Imagem post ${post.title}`} />
                   <div>
@@ -114,6 +115,7 @@ const Home: React.FC<HomeProps> = ({posts, repos}) => {
                   <Date dateString={post._createdAt}/>
                 </Post>
                 </Link>
+                </li>
               );
             })}
           </PostList>

@@ -87,7 +87,7 @@ const Home: React.FC<HomeProps> = ({posts, repos}) => {
           <h3>Repos</h3>
           <div>
           <ul>
-          {repos.map((repo: any) => {
+          {repos?.map((repo: any) => {
               return (
                 <li key={repo.id}>
                   <Link href={repo.url}>

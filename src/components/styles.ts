@@ -173,6 +173,23 @@ export const Projects = styled.div`
         font-size: 1.2rem;
         padding: 2rem;
     }
+    ul {
+        display: grid;
+        list-style: none;
+        gap: 1rem;
+    }
+    a {
+        text-decoration: none;
+    }
+    li {
+        align-items: center;
+        background: #EEEEEE55;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        height: 3rem;
+        text-align: start;
+    }
 `
 export const Blog = styled.div`
     display: flex;

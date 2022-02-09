@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 import {
   Container,
@@ -24,12 +24,14 @@ import Date from "../../src/components/Date";
 import { skills } from "../../src/Mocks";
 import { PostCard } from '../index';
 import Link from "next/link";
+import { resourceUsage } from "process";
 
 interface HomeProps {
   posts?: Array<PostCard>,
+  repos?: Array<any>,
 }
 
-const Home: React.FC<HomeProps> = ({posts}) => {
+const Home: React.FC<HomeProps> = ({posts, repos}) => {
   return (
     <Container>
       <Head>
@@ -82,8 +84,20 @@ const Home: React.FC<HomeProps> = ({posts}) => {
       </ContainerSkills>
       <ContainerProjectsAndBlog>
         <Projects>
-          <h3>Projetos</h3>
-          <div></div>
+          <h3>Repos</h3>
+          <div>
+          <ul>
+          {repos?.map((repo: any) => {
+              return (
+                <li key={repo.id}>
+                  <Link href={repo.url}>
+                    <a>{repo.name}</a>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          </div>
         </Projects>
         <Blog>
           <h3>Últimos posts</h3>

@@ -41,11 +41,12 @@ export interface PostCard {
 }
 
 interface Props {
-  posts: PostCard[];
+  blogPosts: PostCard[];
+  repos: Array<any>;
 }
 
 const Index: React.FC<Props> = (props) => {
-  return <Home posts={props.posts} />;
+  return <Home posts={props.blogPosts} repos={props.repos}/>;
 };
 
 export default Index;
@@ -61,9 +62,19 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const postsData = await graphQLClient.request(graphqlRequest);
 
+  const repositoriosData = await fetch("https://api.github.com/users/luizpibo/repos").then((res) => res.json());
+  const repositorios = repositoriosData.map((repo) => {
+    return {
+      name: repo.name,
+      url: repo.html_url,
+      id: repo.id,
+    };
+  })
+
   return {
     props: {
-      posts: postsData.allPosts,
+      blogPosts: postsData.allPosts,
+      repos: repositorios,
     },
   };
 };

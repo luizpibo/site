@@ -148,7 +148,6 @@ export const ContainerProjectsAndBlog = styled.div`
     display: flex;
     gap: 2rem;
     height: 35rem;
-    justify-content: stretch;
     padding: 2rem;
     text-align: center;
 
@@ -157,20 +156,22 @@ export const ContainerProjectsAndBlog = styled.div`
         margin-bottom: 2rem;
     }
 
-    @media (max-width: 768px) {
-        grid-template: 1fr 1fr / 1fr;
+    @media (max-width: 425px) {
+        flex-direction: column;
+        height: auto;
     }
 `
 export const Projects = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
+    height: 30rem;
 
     div {
         background-color: #EEEEEE55;
         border-radius: 1rem;
         font-size: 1.2rem;
-        padding: 2rem;
+        padding: 1rem 2rem;
         height: 88%;
     }
     ul {
@@ -189,7 +190,7 @@ export const Projects = styled.div`
         border-radius: 1rem;
         display: flex;
         justify-content: center;
-        height: 3rem;
+        min-height: 3rem;
         text-align: start;
     }
 `
@@ -197,6 +198,7 @@ export const Blog = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
+    height: 30rem;
 `
 export const PostList = styled.ul`
     background-color: #B7B7B7;
@@ -216,10 +218,9 @@ export const PostList = styled.ul`
 export const Post = styled.li`
     align-items: center;
     background-color: #FFFFFF85;
-    min-height: 7rem;
-    padding: 1rem;
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
     transition: all 0.3s;
     h4{
         font-size: 1rem;

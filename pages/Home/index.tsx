@@ -22,16 +22,16 @@ import {
 import CardList from "../../src/components/CardList";
 import Date from "../../src/components/Date";
 import { skills } from "../../src/Mocks";
-import { PostCard } from '../index';
+import { PostCard } from "../index";
 import Link from "next/link";
 import { resourceUsage } from "process";
 
 interface HomeProps {
-  posts?: Array<PostCard>,
-  repos?: Array<any>,
+  posts?: Array<PostCard>;
+  repos?: Array<any>;
 }
 
-const Home: React.FC<HomeProps> = ({posts, repos}) => {
+const Home: React.FC<HomeProps> = ({ posts, repos }) => {
   return (
     <Container>
       <Head>
@@ -86,17 +86,17 @@ const Home: React.FC<HomeProps> = ({posts, repos}) => {
         <Projects>
           <h3>Repos</h3>
           <div>
-          <ul>
-          {repos?.map((repo: any) => {
-              return (
-                <li key={repo.id}>
-                  <Link href={repo.url}>
-                    <a>{repo.name}</a>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+            <ul>
+              {repos?.map((repo: any) => {
+                return (
+                  <li key={repo.id}>
+                    <Link href={repo.url}>
+                      <a>{repo.name}</a>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </Projects>
         <Blog>
@@ -104,18 +104,22 @@ const Home: React.FC<HomeProps> = ({posts, repos}) => {
           <PostList>
             {posts?.map((post) => {
               return (
-                <li key={`${post.id}`} >
-                <Link href={`https://luiz-fernando-blog.vercel.app/posts/${post.slug}`}>
-                <Post >
-                  <img src={post.coverImage.url} alt={`Imagem post ${post.title}`} />
-                  <div>
-                    <h4>{post.title}</h4>
-                    <span>Author - {post.author.name}</span>
-                  </div>
-                  <Date dateString={post._createdAt}/>
-                </Post>
+                <Link
+                  href={`https://luiz-fernando-blog.vercel.app/posts/${post.slug}`}
+                  key={`${post.id}`}
+                >
+                  <Post>
+                    <img
+                      src={post.coverImage.url}
+                      alt={`Imagem post ${post.title}`}
+                    />
+                    <div>
+                      <h4>{post.title}</h4>
+                      <span>Author - {post.author.name}</span>
+                    </div>
+                    <Date dateString={post._createdAt} />
+                  </Post>
                 </Link>
-                </li>
               );
             })}
           </PostList>
@@ -136,6 +140,6 @@ const Home: React.FC<HomeProps> = ({posts, repos}) => {
       </Footer>
     </Container>
   );
-}
+};
 
 export default Home;

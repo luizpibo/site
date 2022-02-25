@@ -33,7 +33,7 @@ const skills = [
     name: "NEXT.JS",
     level: 100,
     color: "black",
-    image: "typescript-plain.svg",
+    image: "next-js-icon.svg",
   },
   {
     name: "C++",

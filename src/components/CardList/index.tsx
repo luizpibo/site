@@ -27,7 +27,7 @@ const CardList: React.FC<Props> = ({ skills, title }) => {
           return (
             <CardSkill key={`${skill.name}-${index}`}>
               <Image height={70} width={70} src={"/" + skill.image} />
-              <span>{skill.name}</span>
+              {/**  <span>{skill.name}</span> */}
             </CardSkill>
           );
         })}

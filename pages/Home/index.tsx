@@ -17,6 +17,8 @@ import {
   ProfilePicture,
   Wrapper,
   Blog,
+  IntroductoryParagraphContainer,
+  IntroductoryParagraphWrapper,
 } from "../../src/components/styles";
 
 import CardList from "../../src/components/CardList";
@@ -49,6 +51,18 @@ const Home: React.FC<HomeProps> = ({ posts, repos }) => {
             <h1>Luiz Fernando</h1>
             <hr />
             <h4>web developer</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
+              vitae alias qui quibusdam in facilis ipsam minus porro pariatur
+              earum, nihil ab asperiores, nemo labore culpa iure soluta,
+              delectus magnam.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
+              vitae alias qui quibusdam in facilis ipsam minus porro pariatur
+              earum, nihil ab asperiores, nemo labore culpa iure soluta,
+              delectus magnam.
+            </p>
           </Wrapper>
         </Presentation>
       </Main>
